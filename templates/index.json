@@ -2,9 +2,12 @@
   "sections": {
     "hero-banner": {
       "type": "hero-banner",
+      "custom_css": [
+
+      ],
       "settings": {
-        "hero_image": "shopify:\/\/shop_images\/beach-sunset-thailand.jpg",
-        "hero_header": "Sunset rivers",
+        "hero_image": "shopify:\/\/shop_images\/black-water-in-seaside-pools.jpg",
+        "hero_header": "Go Beyond the Horizon",
         "hero_text": "Go get more here",
         "hero_url": "https:\/\/google.com"
       }
@@ -36,12 +39,13 @@
         "3e2f3e6b-29b9-4952-9e5c-02435172a2c5",
         "31ff70b8-14aa-4c3e-a617-8b86fc67466a"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "text-with-image": {
       "type": "text-with-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/white-lily-of-the-valley-flower-in-shadows.jpg",
+        "image": "shopify:\/\/shop_images\/rich-blue-sky-over-mountains.jpg",
         "header": "Ethically sourced",
         "body": "We make sure our clothes have a positive  impact on the planet as much as on your wardrobe."
       }

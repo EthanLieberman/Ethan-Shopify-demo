@@ -11,12 +11,16 @@
       },
       "footer": {
         "type": "footer",
-        "settings": {}
+        "settings": {
+        }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+
+    ]
   },
   "presets": {
-    "Default": {}
+    "Default": {
+    }
   }
 }
