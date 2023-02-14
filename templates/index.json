@@ -18,19 +18,19 @@
         "2cc3a628-f1f0-497e-b45f-9b70df1174db": {
           "type": "products",
           "settings": {
-            "product": "flair-dress"
+            "product": "the-3p-fulfilled-snowboard"
           }
         },
         "3e2f3e6b-29b9-4952-9e5c-02435172a2c5": {
           "type": "products",
           "settings": {
-            "product": "isla-dress"
+            "product": "the-collection-snowboard-liquid"
           }
         },
         "31ff70b8-14aa-4c3e-a617-8b86fc67466a": {
           "type": "products",
           "settings": {
-            "product": "leslie-earrings"
+            "product": "the-complete-snowboard"
           }
         }
       },
@@ -47,13 +47,13 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/rich-blue-sky-over-mountains.jpg",
         "header": "Ethically sourced",
-        "body": "We make sure our clothes have a positive  impact on the planet as much as on your wardrobe."
+        "body": "We make sure our boards have a positive  impact on the planet as much as on your ride"
       }
     },
     "featured-product": {
       "type": "featured-product",
       "settings": {
-        "product": "madeline-dress"
+        "product": "the-multi-managed-snowboard"
       }
     }
   },
