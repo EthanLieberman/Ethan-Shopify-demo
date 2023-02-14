@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="{{ 'footer.css' | asset_url }}" />
+
+<div class="footer">
+
+  <div class="footer__newsletter">
+    <h4>Newsletter</h4>
+
+    <p>
+      Sign up to receive the latest news and promotions for Rose & Willow.
+    </p>
+
+    <form class="newsletter__form" action="">
+      <input type="text" placeholder="Email">
+      <button>Subscribe</button>
+    </form>
+
+    {% comment %} {% form 'customer' %}
+      <input id="contact_tags" name="contact[tags]" type="hidden" value="prospect,newsletter">
+
+      <input id="contact_email" name="contact[email]" type="text">
+      <button>Subscribe</button>
+    {% endform %} {% endcomment %}
+
+  </div>
+
+  <div class="footer__about">
+    <h4>About Us</h4>
+    <p>
+      We are a collective of artisans, intent on making unique pieces that fit personalities. No two dresses are alike. We only use materials that are well lived in, and well loved in.
+      We hope you join us in making the world a place of love and fashion.
+    </p>
+  </div>
+
+  <div class="footer__navigate">
+    <h4>Navigate</h4>
+    <ul class="nav-items">
+      <li>Account</li>
+      <li>{{ 'Contact Us' | link_to: '/pages/contact-us' }}</li>
+      <li>Refund Policy</li>
+      <li>Terms and Conditions</li>
+      <li>{{ 'Privacy Policy' | link_to: '/pages/privacy-policy' }}</li>
+    </ul>
+  </div>
+
+  <div class="footer__copyright">
+    © 2019 Rose & Willow, all rights reserved.
+  </div>
+
+</div>

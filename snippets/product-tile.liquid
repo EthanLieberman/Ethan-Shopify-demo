@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="{{ 'product-tile.css' | asset_url }}" />
+
+{% if product.featured_image != blank %}
+<div class="quick-add">
+  <div class="product-tile__image-container">
+    <a href="{{ product.url | within: collection }}">
+    {{ product.featured_image | image_url: width: '600px', height: '600px', crop: 'center' | image_tag: class: 'product-tile__product-image' }}
+    </a>
+
+      {% render 'product-form' with product: product, hidden: true %}
+  </div>
+
+  <div class="product-tile__product-info">
+      <p>{{ product.title }}</p>
+      <div class="product-tile__product-price">
+        <p class="product-tile__product-compare">{{ product.compare_at_price | money }}</p>
+        <p>{{ product.price | money }}</p>
+      </div>
+  </div>
+</div>
+{% endif %}

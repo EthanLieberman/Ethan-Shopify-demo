@@ -1,0 +1,36 @@
+@import '../common.scss';
+
+.content {
+
+  &__wrapper {
+    padding: 20px 10px;
+    min-height: 300px;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+    }
+    
+    @include mq($from: laptop) {
+      padding: 40px 110px;
+    }
+    
+    @include mq($from: HD) {
+        padding: 40px 320px;
+      }
+
+  }
+
+  &__header {
+    font-family: $font-header;
+  }
+
+  &__body {
+    font-family: $font-body;
+    padding: 20px 0 10px;
+  }
+
+  &__shop {
+    text-decoration: underline;
+  }
+
+}

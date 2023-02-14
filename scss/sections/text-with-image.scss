@@ -1,0 +1,55 @@
+@import '../common.scss';
+
+.text-with-image{
+  &__container {
+    display: grid;
+    padding: 20px 0;
+    border-radius: 0;
+    border: 1px solid $border;
+    border-width: 1px 0;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq($from: laptop) {
+      padding: 40px 20px;
+    }
+
+    @include mq($from: HD) {
+      padding: 40px 140px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+
+    @include mq($from: tablet) {
+      max-height: none;
+    }
+  }
+
+  &__text {
+    padding: 20px 10px 0;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+      align-self: center;
+    }
+
+    @include mq($from: laptop) {
+      padding: 20px 40px;
+    }
+
+    @include mq($from: HD) {
+      padding: 20px 100px;
+    }
+  }
+
+  &__text p {
+    padding: 20px 0 0;
+  }
+}

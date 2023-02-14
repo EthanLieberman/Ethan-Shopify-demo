@@ -1,0 +1,28 @@
+.featured-product__container {
+  display: grid;
+  padding: 20px 10px;
+}
+@media (min-width: 48em) {
+  .featured-product__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+  }
+}
+@media (min-width: 64em) {
+  .featured-product__container {
+    grid-gap: 60px;
+    padding: 40px 20px;
+  }
+}
+@media (min-width: 90em) {
+  .featured-product__container {
+    grid-gap: 140px;
+    padding: 20px 140px;
+  }
+}
+.featured-product__image {
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}

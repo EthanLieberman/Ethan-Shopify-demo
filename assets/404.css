@@ -1,0 +1,29 @@
+.content__wrapper {
+  padding: 20px 10px;
+  min-height: 300px;
+}
+@media (min-width: 48em) {
+  .content__wrapper {
+    padding: 20px;
+  }
+}
+@media (min-width: 64em) {
+  .content__wrapper {
+    padding: 40px 110px;
+  }
+}
+@media (min-width: 90em) {
+  .content__wrapper {
+    padding: 40px 320px;
+  }
+}
+.content__header {
+  font-family: "Lora", serif;
+}
+.content__body {
+  font-family: "Open Sans", sans-serif;
+  padding: 20px 0 10px;
+}
+.content__shop {
+  text-decoration: underline;
+}

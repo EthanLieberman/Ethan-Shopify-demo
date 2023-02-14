@@ -1,0 +1,33 @@
+.quick-add {
+  position: relative;
+
+  h1 {
+    display: none;
+  }
+
+  .product__price {
+    display: none;
+  }
+
+  .info-card {
+    display: none;
+    position: absolute;
+    background-color: white;
+    bottom: 10%;
+    opacity: 90%;
+    margin: 10px;
+    border-radius: 15px;
+
+    &--reveal {
+      display: block;
+    }
+  }
+
+  &:hover .quick-add-btn {
+    display: block;
+  }
+
+  & .quick-add-btn--hidden {
+    z-index: -1;
+  }
+}

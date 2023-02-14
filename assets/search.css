@@ -1,0 +1,29 @@
+.search__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+@media (min-width: 48em) {
+  .search__container {
+    padding: 10px 20px;
+  }
+}
+.search__searchbar {
+  border: 1px solid #dddddd;
+}
+.search__content {
+  width: 100%;
+  padding: 10px 0;
+}
+@media (min-width: 48em) {
+  .search__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+}

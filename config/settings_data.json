@@ -1,0 +1,22 @@
+{
+  "current": {
+    "theme_color": "#e41818",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "banner_text": "Shop new things here",
+          "banner_url": "https:\/\/google.com"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {}
+  }
+}

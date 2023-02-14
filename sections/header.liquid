@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="{{ 'header.css' | asset_url }}" />
+
+<div id="VHeader">
+  
+  <div class="header__banner">
+    {{ section.settings.banner_text | link_to: section.settings.banner_url }}
+  </div>
+
+  <div class="header__search-row">
+
+    <predictive-search inline-template>
+      <div>
+      <form class="header__search-area" action="/search">
+        <button class="header__search-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+          <g fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2">
+              <circle cx="12.5" cy="12.5" r="11.5" transform="rotate(-45 12.5 12.5)"/>
+              <path stroke-linecap="square" d="M20.632 20.632l7.778 7.778"/>
+          </g>
+        </svg>
+        </button>
+        <div class="header__search-input">
+          <input type="text" placeholder="Search" name="q" v-model="searchQuery" />
+
+          {% render 'predictive-search-results' %}
+        </div>
+      </form>
+    </div>
+    </predictive-search>
+
+    <h4 class="header__title">{{ 'Rose & Willow' | link_to: shop.url }}</h4>
+
+    <flyout inline-template>
+    <div class="header__cart">
+      <svg @click="Clicked" xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24">
+        <g fill="none" fill-rule="evenodd" stroke="#222" stroke-width="2">
+            <path d="M2.9 6L1.11 23h23.78L23.1 6H2.9zM18 6A5 5 0 0 0 8 6"/>
+        </g>
+      </svg>
+      {% render 'flyout' %}
+    </div>
+    </flyout>
+
+  </div>
+
+  <div class="header__categories">
+    {% for link in linklists.main-menu.links %}
+      <a class="header__menu--item" href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+
+</div>
+
+<script src="{{ 'now' | date: '%s' | prepend: 'Header.js?v=' | asset_url }}" type="module"></script>
+
+
+{% schema %}
+{
+  "name": "header",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Banner Text",
+      "id": "banner_text"
+    },
+    {
+      "type": "url",
+      "label": "Link to",
+      "id": "banner_url"
+    }
+  ]
+}
+{% endschema %}

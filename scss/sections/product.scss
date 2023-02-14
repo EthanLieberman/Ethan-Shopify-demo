@@ -1,0 +1,33 @@
+@import '../common.scss';
+
+.product {
+  padding: 20px 10px;
+
+  @include mq($from: tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+  }
+
+  @include mq($from: laptop) {
+    grid-gap: 60px;
+  }
+
+  @include mq($from: HD) {
+    padding: 20px 140px;
+    grid-gap: 105px;
+  }
+
+  &__image-container {
+    @include mq($from: tablet) {
+      grid-area: 1/1;
+    }
+  }
+  
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+}

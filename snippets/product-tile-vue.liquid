@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="{{ 'product-tile.css' | asset_url }}" />
+
+<div v-if="product.featured_image != null">
+  <div class="quick-add">
+    <div class="product-tile__image-container">
+      <a :href="product.url">
+        <img :src="product.featured_image" height=600 width=600 crop=center class="product-tile__product-image" loading=lazy>
+      </a>
+
+      {% render 'product-form-vue' with hidden: true %}
+    </div>
+
+    <div class="product-tile__product-info">
+        <p v-text="product.title"></p>
+        <div class="product-tile__product-price">
+          <p class="product-tile__product-compare">${product.compare_at_price | money}</p>
+          <p>${product.price | money}</p>
+        </div>
+    </div>
+  </div>
+</div>

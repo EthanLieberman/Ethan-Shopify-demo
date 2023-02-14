@@ -1,0 +1,31 @@
+@import '../common.scss';
+
+.hero {
+  &__container {
+    display: grid;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    min-height: 320px;
+    grid-area: 1/1;
+  }
+
+  &__text {
+    color: white;
+    grid-area: 1/-1;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+  }
+
+  &__text a {
+    color: white;
+    font-family: $font-body;
+  }
+
+  &__text h1 {
+    margin-bottom: 20px;
+  }
+}

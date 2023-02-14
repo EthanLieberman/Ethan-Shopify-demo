@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "hero_image": "shopify:\/\/shop_images\/beach-sunset-thailand.jpg",
+        "hero_header": "Sunset rivers",
+        "hero_text": "Go get more here",
+        "hero_url": "https:\/\/google.com"
+      }
+    },
+    "3up-products": {
+      "type": "3up-products",
+      "blocks": {
+        "2cc3a628-f1f0-497e-b45f-9b70df1174db": {
+          "type": "products",
+          "settings": {
+            "product": "flair-dress"
+          }
+        },
+        "3e2f3e6b-29b9-4952-9e5c-02435172a2c5": {
+          "type": "products",
+          "settings": {
+            "product": "isla-dress"
+          }
+        },
+        "31ff70b8-14aa-4c3e-a617-8b86fc67466a": {
+          "type": "products",
+          "settings": {
+            "product": "leslie-earrings"
+          }
+        }
+      },
+      "block_order": [
+        "2cc3a628-f1f0-497e-b45f-9b70df1174db",
+        "3e2f3e6b-29b9-4952-9e5c-02435172a2c5",
+        "31ff70b8-14aa-4c3e-a617-8b86fc67466a"
+      ],
+      "settings": {}
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/white-lily-of-the-valley-flower-in-shadows.jpg",
+        "header": "Ethically sourced",
+        "body": "We make sure our clothes have a positive  impact on the planet as much as on your wardrobe."
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "product": "madeline-dress"
+      }
+    }
+  },
+  "order": [
+    "hero-banner",
+    "3up-products",
+    "text-with-image",
+    "featured-product"
+  ]
+}

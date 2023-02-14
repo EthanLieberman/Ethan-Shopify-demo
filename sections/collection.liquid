@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="{{ 'collection.css' | asset_url }}" />
+<link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" />
+
+{% render 'breadcrumbs' %}
+
+<div class="collection__hero-container">
+{{ collection.featured_image | image_url: width: 855, height: 525 | image_tag: class: "collection__featured-img" }}
+
+  <div>
+    <h1 class="collection__title">
+      {{ collection.title }}
+    </h1>
+
+    <p class="collection__description">
+      {{ collection.description }}
+    </p>
+  </div>
+</div>
+
+<div class="collection__filterSort-container">
+  <div class="collection__count collection__grid-count">
+    {{ 'collection.product_info.product_count' | t: count: collection.all_products_count }}
+  </div>
+
+
+  {% if collection.all_tags.size > 0 %}
+  <div class="collection__filter collection__grid-filter">
+    <h2>
+      Filter by
+    </h2>
+    <div>
+      {% for tag in collection.all_tags %}
+        <span class="collection__tags">
+        {%- if current_tags contains tag -%}
+          {{ tag | link_to_remove_tag: tag }}
+        {%- else -%}
+          {{ tag | link_to_add_tag: tag }}
+        {%- endif -%}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% endif %}
+
+
+  <form class="collection__sort collection__grid-sort">
+    <h2>
+      Sort by
+    </h2>
+
+    <div class="collection__sort-selections">
+      <div>
+        <select name="sort_by" id="sort" class="collection__sort--select">
+          {% for item in collection.sort_options %}
+            <option value="{{ item.value }}">{{ item.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="button">
+        {{ 'collection.sort.sort_btn' | t }}
+      </button>
+    </div>
+  </form>
+  
+</div>
+
+
+{% paginate collection.products by 6, window_size: '1' %}
+  <div class="collection__product-container" id="VQuickAdd">
+    {% for product in collection.products %}
+      {% render 'product-tile' with product: product %}
+    {% endfor %}
+  </div>
+  
+  {% render 'pagination' with paginate: paginate %}
+  
+{% endpaginate %}
+
+<script src="{{ 'now' | date: '%s' | prepend: 'QuickAdd.js?v=' | asset_url }}" type="module"></script>
+
+{% schema %}
+{
+  "name": "collection"
+}
+{% endschema %}

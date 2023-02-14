@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="{{ 'hero-banner.css' | asset_url }}" />
+
+<div class="hero__container">
+  {{ section.settings.hero_image | image_url: width: 1440, height: 800, crop: 'center' | image_tag: class: "hero__image" }}
+
+  <div class="hero__text">
+    <h1>{{ section.settings.hero_header }}</h1>
+    {{ section.settings.hero_text | link_to: section.settings.hero_url }}
+  </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Hero Image",
+      "id": "hero_image"
+    },
+    {
+      "type": "text",
+      "label": "Hero Header",
+      "id": "hero_header"
+    },
+    {
+      "type": "text",
+      "label": "Hero text",
+      "id": "hero_text"
+    },
+    {
+      "type": "url",
+      "label": "Hero Url",
+      "id": "hero_url"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,101 @@
+@import '../common.scss';
+
+.product__price {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0 10px;
+  font-weight: bold;
+
+  @include mq($from: laptop) {
+    padding: 40px 0 10px;
+  }
+}
+
+.price__compare {
+  text-decoration: line-through;
+  color: $color-secondary;
+  font-weight: 400;
+}
+
+.info-card {
+  display: grid;
+  justify-content: center;
+  border-radius: 0;
+  border: 1px solid $border;
+  text-align: center;
+
+  &__fieldset {
+    border: 0;
+    padding: 0;
+  }
+
+  &__legend {
+    padding: 10px;
+  }
+  
+  &__option-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    border: 1px solid $border;
+    border-radius: 0;
+    border-width: 1px 0;
+  }
+  
+  &__option {
+    padding: 20px 0;
+  }
+
+  &__option label {
+    padding: 10px;
+    border-radius: 0;
+    border: 1px solid $border;
+    width: 10%;
+    height: 50%;
+    font-family: $font-body;
+  }
+  
+  &__option input:checked + label {
+    background-color: $color-secondary;
+  }
+  
+  &__option input {
+    display: none;
+  }
+  
+  &__qty {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+    }
+  }
+  
+  &__qty input {
+    border-radius: 0;
+    border: 1px solid $border;
+    width: 100%;
+  }
+  
+  &__add-to-cart {
+    color: white;
+    background-color: $color-primary;
+    padding: 10px 30px;
+    font-family: $font-body;
+  }
+  
+  &__description {
+    text-align: justify;
+    padding: 10px;
+    border-radius: 0;
+    border: 1px solid $border;
+    border-width: 1px 0 0;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+    }
+  }
+}

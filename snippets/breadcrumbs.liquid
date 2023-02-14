@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ 'breadcrumbs.css' | asset_url }}" />
+
+<div class="breadcrumbs">
+  {{ 'Home' | link_to: shop.url }}
+
+  {% if collection != blank %}
+    {{ collection.handle | link_to: collection.url | replace: '<a', '<a class="breadcrumb"' }}
+
+    {% if product != blank %}
+        {{ product.handle | link_to: product.url | replace: '<a', '<a class="breadcrumb"' }}
+      {% endif %}
+
+  {% else %}
+  <div class="breadcrumb">{{ page.title }}</div>
+  {% endif %}
+</div>

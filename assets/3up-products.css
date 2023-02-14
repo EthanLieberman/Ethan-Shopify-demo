@@ -1,0 +1,51 @@
+.three-up-products__container {
+  display: grid;
+  padding: 20px 10px;
+}
+@media (min-width: 48em) {
+  .three-up-products__container {
+    padding: 20px;
+  }
+}
+@media (min-width: 64em) {
+  .three-up-products__container {
+    padding: 20px 20px 40px;
+  }
+}
+@media (min-width: 90em) {
+  .three-up-products__container {
+    padding: 20px 140px 40px;
+  }
+}
+.three-up-products__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+}
+.three-up-products__image {
+  width: 100%;
+  height: auto;
+  padding: 20px 0 10px;
+}
+.three-up-products__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+}
+.three-up-products__compare-price {
+  color: #999999;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+@media (min-width: 48em) {
+  .three-up-products__blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+}

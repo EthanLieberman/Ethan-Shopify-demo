@@ -1,0 +1,25 @@
+@import '../common.scss';
+
+.breadcrumbs {
+  padding: 0 10px;
+  display: flex;
+
+  @include mq($from: tablet) {
+    padding: 0 20px;
+  }
+
+  @include mq($from: HD) {
+    padding: 0 140px;
+  }
+}
+
+.breadcrumb {
+  &::before {
+    content: " | ";
+    white-space: pre;
+  }
+
+  &:last-child {
+    color: $border;
+  }
+}

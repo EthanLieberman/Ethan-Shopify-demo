@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="{{ 'text-with-image.css' | asset_url }}" />
+
+<div class="text-with-image__container">
+  {{ section.settings.image | image_url: width: 858, height: 700, crop: 'center' | image_tag: class: "text-with-image__image" }}
+
+  <div class="text-with-image__text">
+    <h1>{{ section.settings.header }}</h1>
+    <p>{{ section.settings.body }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text with image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    },
+    {
+      "type": "text",
+      "label": "Header",
+      "id": "header"
+    },
+    {
+      "type": "text",
+      "label": "Body",
+      "id": "body"
+    }
+  ]
+}
+{% endschema %}

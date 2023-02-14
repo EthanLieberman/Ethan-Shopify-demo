@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="{{ 'contact.css' | asset_url }}" />
+
+{% render 'breadcrumbs' %}
+
+<div class="contact__wrapper">
+
+  <h1 class="contact__header">Contact us</h1>
+
+  <p class="contact__body">Have some questions, or just want to say hello? We'd love to hear from you!</p>
+  <p class="contact__body">Send us an email below.</p>
+
+  {% form 'contact' %}
+    {{ form.errors | default_errors }}
+
+    <div class="contact__grid">
+      <input type="text" name="contact[first_name]" id="first_name" placeholder="Name" class="name" />
+
+      <input type="text" name="contact[phone]" id="phone" placeholder="Phone" class="phone" />
+
+      <input type="text" name="contact[email]" id="email" placeholder="Email" class="email" />
+
+      <textarea name="contact[body]" id="message" placeholder="Message" class="message" ></textarea>
+
+      <div class="submit">
+        <button class="button">Send</button>
+      </div>
+    </div>
+  {% endform %}
+
+</div>

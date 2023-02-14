@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="{{ 'flyout.css' | asset_url }}" />
+<link rel="stylesheet" href="{{ 'cart.css' | asset_url }}" />
+
+
+
+<div
+  class="flyout"
+  v-bind:class="[status ? 'flyout--revealed' : '']">
+    {% render 'cart' %}
+</div>
+

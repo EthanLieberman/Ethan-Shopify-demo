@@ -1,0 +1,20 @@
+@import '../common.scss';
+
+.flyout {
+  position: fixed;
+  transform: translateX(105%);
+  right: 0;
+  top: 145px;
+  z-index: 1;
+  background-color: white;
+  width: 320px;
+  border-radius: 0;
+  border: 5px solid $border;
+  border-width: 5px 0 5px 5px;
+  box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 75%);
+  transition: transform 0.25s ease-in-out;
+
+  &--revealed {
+    transform: translateX(0);
+  }
+}

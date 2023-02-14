@@ -1,0 +1,8 @@
+.test {
+  color: black;
+}
+@media (min-width: 20em) {
+  .test {
+    color: red;
+  }
+}

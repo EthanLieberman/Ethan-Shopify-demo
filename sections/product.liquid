@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="{{ 'product.css' | asset_url }}" />
+
+{% render 'breadcrumbs' %}
+
+<div class="product" id="VProduct">
+
+  {% render 'product-form' quickAdd: false %}
+
+  <div class="product__image-container">
+    {% for image in product.media %}
+        {{ image | image_url: width: 1138, height: 568, crop: 'center' | image_tag: class: 'product__image' }}
+    {% endfor %}
+  </div>
+
+</div>
+
+<link rel="stylesheet" href="{{ '3up-products.css' | asset_url }}" />
+<link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" />
+
+
+<div class="three-up-products__container" id="VRelatedProducts">
+  <div v-if="relatedProducts.length > 0" v-cloak>
+    <h1>Related Products</h1>
+  
+    <div class="three-up-products__blocks">
+      <div v-for="product in relatedProducts">
+        {% render 'product-tile-vue' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'now' | date: '%s' | prepend: 'RelatedProducts.js?v=' | asset_url }}" type="module"></script>
+
+<script src="{{ 'now' | date: '%s' | prepend: 'Product.js?v=' | asset_url }}" type="module"></script>
+
+{% schema %}
+{
+  "name": "product"
+}
+{% endschema %}

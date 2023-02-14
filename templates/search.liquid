@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="{{ 'search.css' | asset_url }}" />
+
+{% render 'breadcrumbs' %}
+
+<div class="search__container">
+
+  <form action="/search" method="get">
+    <input type="text" name="q" value="{{ search.terms | escape }}" id="result-q" class="search__searchbar" />
+    <input type="submit" value="Search" />
+  </form>
+  
+  {% if search.performed %}
+    
+    {% paginate search.results by 10 %}  
+
+    <div class="search__content">
+  
+    {% if search.results == empty %}  
+      <p>Your search for "{{ search.terms | escape }}" did not yield any results</p>              
+    {% else %}  
+
+        {% for product in search.results %}      
+          {% render 'product-tile' with product: product %}
+        {% endfor %}
+
+      {% endif %}
+
+    </div>
+    
+    {% render 'pagination' with paginate: paginate %}
+    
+    {% endpaginate %}    
+    
+  {% endif %}
+
+</div>

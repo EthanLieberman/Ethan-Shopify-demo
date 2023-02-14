@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{{ 'featured-product.css' | asset_url }}" />
+
+{%- liquid
+assign product = section.settings.product
+assign hidden = true
+-%}
+<div class="featured-product__container">
+
+  {{ product.featured_image | image_url: width: 855, height: 855 | image_tag: class: "featured-product__image" }}
+
+  <div id="VProduct">
+    {% render 'product-form' product: product, hidden: hidden, quickAdd: false %}
+  </div>
+</div>
+
+<script src="{{ 'now' | date: '%s' | prepend: 'Product.js?v=' | asset_url }}" type="module"></script>
+
+{% schema %}
+{
+  "name": "Featured Product",
+  "settings": [
+    {
+      "type": "product",
+      "label": "Product",
+      "id": "product"
+    }
+  ]
+}
+{% endschema %}

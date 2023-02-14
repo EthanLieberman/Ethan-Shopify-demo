@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="{{ 'product-form.css' | asset_url }}" />
+
+<product-form
+  handle="{{ product.handle }}"
+  key="{{ product.id }}"
+  inline-template
+>
+  <div v-if="product">
+    <h1>${ product.title }</h1>
+    <div class="product__price">
+      <p class="price__compare">${ product.compare_at_price | money }</p>
+      <p>${ product.price | money }</p>
+    </div>
+
+    <div class="info-card" :class="quickAdd ? 'info-card--reveal' : '' " @mouseleave="QuickAddLeave" @mouseout="QuickAddLeave">
+
+      {% for option in product.options_with_values %}
+        <fieldset class="info-card__fieldset">
+          <legend class="info-card__legend">{{ option.name }}</legend>
+          <div class="info-card__option-container">
+            {% for value in option.values %}
+              <div class="info-card__option">
+                <input
+                  v-model="option{{ option.position }}"
+                  type="radio"
+                  name="{{ option.name }}"
+                  value="{{ value }}"
+                  id="Option--{{ product.id }}--{{ option.name | handleize }}--{{ value | handleize }}"
+                />
+                <label
+                  for="Option--{{ product.id }}--{{ option.name | handleize }}--{{ value | handleize }}"
+                >
+                  {{ value }}
+                </label>
+              </div>
+            {% endfor %}
+          </div>
+        </fieldset>
+      {% endfor %}
+
+      {% comment %}
+      <div class="info-card__option-container" v-if="product.options[0]">
+          <div
+            class="info-card__option option1"
+            v-for="value in product.options[0].values"
+          >
+            <label>${value}
+              <input v-model="option1" type="radio" name="size" v-bind:value="value" />
+            </label>
+          </div>
+      </div>
+
+      <div class="info-card__option-container" v-if="product.options[1]">
+        <div
+          class="info-card__option option2"
+          v-for="value in product.options[1].values"
+        >
+          <label>${value}
+            <input v-model="option2" type="radio" name="color" v-bind:value="value" />
+          </label>
+        </div>
+      </div>
+      
+      <div class="info-card__option-container" v-if="product.options[2]">
+        <div
+          class="info-card__option option3"
+          v-for="value in product.options[2].values"
+        >
+          <label>${value}
+            <input v-model="option3" type="radio" name="color" v-bind:value="value" />
+          </label>
+        </div>
+      </div>
+      {% endcomment %}
+
+      <div class="info-card__qty">
+        <input v-model="quantity" type="number" name="quantity" min="1">
+        <input class="info-card__add-to-cart" :value="addToCartText" type="submit" @click="addToCart">
+      </div>
+
+
+
+      {% if hidden != true %}
+      <div class="info-card__description">
+        {{ product.description }}
+      </div>
+      {% endif %}
+    </div>
+    {% unless quickAdd == false %}
+      {% render 'quick-add-btn' %}
+    {% endunless %}
+  </div>
+</product-form>

@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="{{ 'quick-add-btn.css' | asset_url }}" />
+
+<div class="quick-add-btn" :class="quickAdd ? 'quick-add-btn--hidden' : '' ">
+  <p @click="QuickAdd">Quick add</p>
+</div>

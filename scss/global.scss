@@ -1,0 +1,35 @@
+@import './common.scss';
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: $font-body;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: $font-header;
+  font-weight: 400;
+}
+h2 {
+  font-size: 12px;
+  font-family: $font-header;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 20px;
+  font-family: $font-header;
+  font-weight: 400;
+}
+
+p {
+  font-family: $font-body;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

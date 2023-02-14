@@ -1,0 +1,96 @@
+@import '../common.scss';
+
+.header {
+  &__banner {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__banner a {
+    color: white;
+  }
+
+  &__search-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    white-space: nowrap;
+    align-items: center;
+    padding: 20px 10px;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+    }
+
+    @include mq($from: HD) {
+      padding: 20px 140px;
+    }
+  }
+
+  &__search-area {
+    @include mq($from: tablet) {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__search-input {
+    display: none;
+
+    @include mq($from: tablet) {
+      display: block;
+    }
+  }
+
+  &__search-area input {
+    border: 1px solid $border;
+    border-width: 0 0 1px;
+  }
+
+  &__search-btn {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  &__title {
+    justify-self: center;
+  }
+
+  &__cart {
+    justify-self: end;
+  }
+
+  &__categories {
+    display: flex;
+    border-radius: 0;
+    border: 1px solid $border;
+    border-width: 1px 0;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  &__menu--item:first-child {
+    border-radius: 0;
+    border: 1px solid $border;
+    border-width: 0 0 0 1px;
+    padding: 5px;
+  }
+
+  &__menu--item {
+    border-radius: 0;
+    border: 1px solid $border;
+    border-width: 0 .5px;
+    padding: 5px;
+    font-family: $font-body;
+  }
+
+  &__menu--item:last-child {
+    border-radius: 0;
+    border: 1px solid $border;
+    border-width: 0 1px 0 0 ;
+    padding: 5px;
+  }
+}

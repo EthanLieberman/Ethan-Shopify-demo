@@ -1,0 +1,27 @@
+.page__wrapper {
+  padding: 20PX 10PX;
+}
+@media (min-width: 48em) {
+  .page__wrapper {
+    padding: 20px;
+  }
+}
+@media (min-width: 64em) {
+  .page__wrapper {
+    padding: 40px 110px;
+  }
+}
+@media (min-width: 90em) {
+  .page__wrapper {
+    padding: 40px 320px;
+  }
+}
+.page__header {
+  padding-bottom: 20px;
+  font-family: var(--font-header);
+  font-size: 36px;
+}
+.page__body {
+  font-family: var(--font-body);
+  font-size: 14px;
+}

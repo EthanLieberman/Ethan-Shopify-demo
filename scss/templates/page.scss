@@ -1,0 +1,36 @@
+@import '../common.scss';
+
+.page {
+  &__wrapper {
+    padding: 20PX 10PX;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+    }
+
+    @include mq($from: laptop) {
+      padding: 40px 110px;
+    }
+
+    @include mq($from: HD) {
+      padding: 40px 320px;
+    }
+  }
+
+  &__header {
+    padding-bottom: 20px;
+    font-family: var(--font-header);
+    font-size: 36px;
+  }
+
+  &__body {
+    font-family: var(--font-body);
+    font-size: 14px;
+  }
+}
+
+.test {
+  @include mq($from: test) {
+    background-color: aliceblue;
+  }
+}

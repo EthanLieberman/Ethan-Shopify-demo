@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ 'predictive-search-results.css' | asset_url }}" />
+
+<div class="predictive-search__container" v-if="searchQuery">
+  <a :href=product.url class="predictive-search__content" v-for="product in searchResults">
+
+    <div class="predictive-search__image-container">
+      <img :src=product.featured_image.url class="predictive-search__product-image" loading="lazy">
+    </div>
+
+    <div class="predictive-search__text">
+      <div v-text=product.title class="predictive-search__title">
+      </div>
+    </div>
+
+  </a>
+</div>

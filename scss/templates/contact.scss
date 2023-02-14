@@ -1,0 +1,105 @@
+@import '../common.scss';
+
+.contact {
+  &__wrapper {
+    padding: 20px 10px;
+
+    @include mq($from: tablet) {
+      padding: 20px;
+    }
+
+    @include mq($from: laptop) {
+      padding: 40px 110px;
+    }
+
+    @include mq($from: HD) {
+      padding: 40px 320px;
+    }
+  }
+
+  &__header {
+    font-family: var(--font-header);
+    padding-bottom: 10px;
+
+    @include mq($from: laptop) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__body {
+    font-family: var(--font-body);
+    padding-top: 10px;
+
+    @include mq($from: laptop) {
+      padding-top: 10px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+
+    @include mq($from: tablet) {
+      grid-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+
+
+.name,
+.phone,
+.email,
+.message {
+  border-radius: 0;
+  border: 1px solid var(--border);
+  border-width: 0 0 1px;
+  padding-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.name {
+  @include mq($from: tablet) {
+    grid-area: 1/1;
+  }
+}
+
+.phone {
+  @include mq($from: tablet) {
+    grid-area: 1/2;
+  }
+}
+
+.email {
+  @include mq($from: tablet) {
+    grid-area: 2/1/2/span 2;
+  }
+}
+
+.message {
+  min-height: 120px;
+  margin-bottom: 20px;
+
+  @include mq($from: tablet) {
+    grid-area: 3/1/3/span 2; 
+  }
+}
+
+.button {
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 10px 30px;
+  background-color: black;
+  color: white;
+  width: 50%;
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+
+  @include mq($from: tablet) {
+    grid-area: 4/2;
+  }
+}

@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="{{ 'product-form.css' | asset_url }}" />
+
+<product-form
+  :handle="product.handle"
+  :key="product.id"
+  inline-template
+>
+  <div v-if="product">
+    <h1>${ product.title }</h1>
+    <div class="product__price">
+      <p class="price__compare">${ product.compare_at_price | money }</p>
+      <p>${ product.price | money }</p>
+    </div>
+
+    <div class="info-card" :class="quickAdd ? 'info-card--reveal' : '' " @mouseleave="QuickAddLeave">
+
+      <div v-for="option in product.options">
+        <fieldset class="info-card__fieldset">
+          <legend class="info-card__legend">${option.name}</legend>
+          <div class="info-card__option-container">
+            <div v-for="value in option.values">
+              <div class="info-card__option">
+                <input
+                  type="radio"
+                  :name="`${option.name}`"
+                  :value="value"
+                  :id="`option--${product.id}--${option.name}--${value}`"
+                  @change="optionChange(option.position, value)"
+                />
+                <label
+                  :for="`option--${product.id}--${option.name}--${value}`"
+                >
+                  ${value}
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="info-card__qty">
+        <input v-model="quantity" type="number" name="quantity" min="1">
+        <input class="info-card__add-to-cart" :value="addToCartText" type="submit" @click="addToCart">
+      </div>
+
+
+
+      {% if hidden != true %}
+      <div class="info-card__description">
+        {{ product.description }}
+      </div>
+      {% endif %}
+    </div>
+    {% unless quickAdd == false %}
+      {% render 'quick-add-btn' %}
+    {% endunless %}
+  </div>
+</product-form>

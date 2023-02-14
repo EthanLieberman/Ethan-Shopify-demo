@@ -1,0 +1,29 @@
+@import '../common.scss';
+
+.paginate {
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__chevron {
+    margin: auto 0;
+  }
+
+  &__chevron svg {
+    height: 25px;
+    width: auto;
+  }
+
+  &__page {
+    border: 1px solid $border;
+    border-radius: 0;
+    padding: 5px 10px;
+    margin: 5px;
+  }
+
+  &__current-page {
+    border: 1px solid $color-primary;
+  }
+}

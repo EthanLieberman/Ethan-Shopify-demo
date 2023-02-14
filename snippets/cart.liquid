@@ -1,0 +1,62 @@
+<cart inline-template>
+  <div class="cart__wrapper" v-if="cart">
+    <h1 class="cart__header">
+      {{ 'Cart' | link_to: '/cart' }}
+    </h1>
+
+    <div v-if="cart.item_count == 0">
+      <p class="cart__empty">Your cart is empty</p>
+      {{ 'Keep shopping' | link_to: shop.url | replace: '<a', '<a class="cart__keep-shopping"' }}
+    </div>
+
+    <div class="large-cart__info">
+      <h3 class="large-cart1">Product</h3>
+      <h3 class="large-cart2">Price</h3>
+      <h3 class="large-cart3">Quantity</h3>
+      <h3 class="large-cart4">Total</h3>
+    </div>
+
+    <div v-if="cart.item_count != 0">
+      <div v-for="item in cart.items" :key="item.key">
+        <line-item
+          :item="item"
+          @update-cart="updateCart"
+          @remove-from-cart="removeFromCart"
+          inline-template
+        >
+          <div class="line-item__container">
+            <img :src="item.featured_image.url" class="line-item__image" loading="lazy"/>
+
+            <div class="line-item__info-grid">
+              <h3 class="info-grid1">${ item.title }</h3>
+
+              <p class="info-grid2">${ item.price | money }</p>
+
+              <input v-model="item.quantity" class="info-grid3" @change.prevent="$emit('update-cart', item.variant_id, item.quantity)">
+
+              <a href="#" class="info-grid4" @click.prevent="$emit('remove-from-cart', item.variant_id)">Remove</a>
+
+              <p class="info-grid5">${ item.final_line_price | money }</p>
+            </div>
+          </div>
+        </line-item>
+      </div>
+
+      {% comment %} <div class="checkout__large"> {% endcomment %}
+      <div class="checkout__flex">
+        <h3>Subtotal</h3>
+        <p>${ cart.total_price | money }</p>
+      </div>
+
+      <div class="checkout__flex">
+        <h3>Taxes</h3>
+        <p>Calculated at checkout</p>
+      </div>
+
+      <form action="{{ routes.cart_url }}" method="post" class="checkout__buttons">
+        <input class="cart__checkout" type="submit" name="checkout" value="Checkout">
+      </form>
+    </div>
+
+  </div>
+</cart>

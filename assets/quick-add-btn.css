@@ -1,0 +1,28 @@
+.quick-add-btn {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: default;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  z-index: 1;
+}
+@media (hover: hover) {
+  .quick-add-btn {
+    display: none;
+  }
+}
+@media (hover: none) {
+  .quick-add-btn {
+    display: block;
+    left: 75%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    bottom: 15%;
+    white-space: nowrap;
+  }
+}

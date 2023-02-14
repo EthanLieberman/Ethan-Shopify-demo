@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="{{ '3up-products.css' | asset_url }}" />
+<link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" />
+
+
+<div class="three-up-products__container">
+  <h1>Our Favorites</h1>
+
+  <div class="three-up-products__blocks" id="VQuickAdd">
+    {% for product in section.blocks %}
+      {% render 'product-tile' with product: product.settings.product %}
+    {% endfor %}
+  </div>
+
+</div>
+
+<script src="{{ 'now' | date: '%s' | prepend: 'QuickAdd.js?v=' | asset_url }}" type="module"></script>
+
+{% schema %}
+{
+  "name": "3up Products",
+  "blocks": [
+    {
+      "name": "products",
+      "type": "products",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "product",
+          "label": "Product",
+          "id": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,24 @@
+.breadcrumbs {
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 48em) {
+  .breadcrumbs {
+    padding: 0 20px;
+  }
+}
+@media (min-width: 90em) {
+  .breadcrumbs {
+    padding: 0 140px;
+  }
+}
+
+.breadcrumb::before {
+  content: " | ";
+  white-space: pre;
+}
+.breadcrumb:last-child {
+  color: #dddddd;
+}

@@ -1,0 +1,32 @@
+.product {
+  padding: 20px 10px;
+}
+@media (min-width: 48em) {
+  .product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+  }
+}
+@media (min-width: 64em) {
+  .product {
+    grid-gap: 60px;
+  }
+}
+@media (min-width: 90em) {
+  .product {
+    padding: 20px 140px;
+    grid-gap: 105px;
+  }
+}
+@media (min-width: 48em) {
+  .product__image-container {
+    grid-area: 1/1;
+  }
+}
+.product__image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}

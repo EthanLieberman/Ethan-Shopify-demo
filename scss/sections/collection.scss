@@ -1,0 +1,217 @@
+@import '../common.scss';
+
+.collection {
+  
+  &__hero-container {
+    padding-top: 20px;
+
+    @include mq($from: tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px 20px 20px;
+      align-items: center;
+    }
+
+    @include mq($from: laptop) {
+      padding: 20px 20px 40px;
+    }
+
+    @include mq($from: HD) {
+      padding: 20px 140px 40px;
+    }
+  }
+
+  &__featured-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+
+      @include mq($from: tablet) {
+        width: 354px;
+        height: 236px;
+      }
+
+      @include mq($from: laptop) {
+        width: 482px;
+        height: 321px;
+      }
+
+      @include mq($from: HD) {
+        width: 570px;
+        height: 380px;
+      }
+  }
+
+  &__title {
+    padding: 20px 10px;
+
+    @include mq($from: tablet) {
+      padding: 5px 10px;
+    }
+
+    @include mq($from: laptop) {
+      padding: 5px 60px;
+    }
+  }
+
+  &__description {
+    padding: 0 10px 20px;
+
+    @include mq($from: tablet) {
+      padding: 5px 10px;
+    }
+
+    @include mq($from: laptop) {
+      padding: 5px 60px;
+    }
+  }
+
+  &__count {
+    font-family: $font-body;
+    padding: 5px 0;
+    text-align: center;
+    border: 1px solid $border;
+    border-width: 1px 0px;
+  }
+
+  &__filter {
+    padding: 10px;
+
+    @include mq($from: tablet) {
+      padding: 9.5px 20px 17.5px;
+    }
+  }
+
+  &__tags {
+    font-family: $font-body;
+  }
+
+  &__tags:not(:last-child)::after {
+    content: " | ";
+  }
+
+  &__sort {
+    padding: 10px;
+    border: 1px solid $border;
+    border-width: 1px 0px;
+    display: grid;
+    grid-auto-rows: auto 1fr;
+    align-self: stretch;
+
+    @include mq($from: tablet) {
+      padding: 9.5px 20px 17.5px;
+    }
+
+    @include mq($from: HD) {
+      padding: 9.5px 0 17.5px 20px;
+    }
+  }
+
+  &__filterSort-container {
+    @include mq($from: tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    @include mq($from: laptop) {
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid $border;
+      border-width: 1px 0;
+    }
+
+    @include mq($from: HD) {
+      padding: 0 140px;
+    }
+  }
+
+  &__sort--select {
+    border: 0;
+    font-family: $font-body;
+  }
+
+  &__sort-selections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    @include mq($from: HD) {
+      justify-items: end;
+    }
+  }
+
+  &__product-container {
+    display: grid;
+    justify-content: center;
+    padding: 20px 10px;
+
+    @include mq($from: tablet) {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px;
+    }
+
+    @include mq($from: laptop) {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 20px 20px 40px;
+    }
+
+    @include mq($from: HD) {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 20px 140px 40px;
+    }
+  }
+
+  &__grid-count {
+    @include mq($from: tablet) {
+      grid-area: 1/1/2/6;
+    }
+
+    @include mq($from: laptop) {
+      grid-area: 1/1/2/2;
+      border: 0;
+    }
+
+    @include mq($from: HD) {
+      grid-area: 1/1/2/2;
+      justify-self: left;
+    }
+  }
+
+  &__grid-filter {
+    @include mq($from: tablet) {
+      grid-area: 2/1/3/2;
+      border: 1px solid $border;
+      border-width: 0 1px 1px 0;
+    }
+
+    @include mq($from: laptop) {
+      grid-area: 1/2/2/3;
+      border-width: 0 1px;
+    }
+  }
+
+  &__grid-sort {
+    @include mq($from: tablet) {
+      grid-area: 2/2/3/3;
+      border: 1px solid $border;
+      border-width: 0px 0px 1px 0px;
+    }
+
+    @include mq($from: laptop) {
+      grid-area: 1/3/2/4;
+      border: 0;
+    }
+  }
+}
+
+
+.button {
+  border: .5px solid $border;
+  border-radius: 0;
+  background-color: white;
+  padding: 10px 50px;
+  font-family: $font-body;
+}

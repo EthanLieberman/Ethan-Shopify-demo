@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="{{ 'cart.css' | asset_url }}" />
+
+{% render 'breadcrumbs' %}
+
+<div class="cart-page" id="VCartPage">
+{% render 'cart' %}
+</div>
+
+<script src="{{ 'now' | date: '%s' | prepend: 'CartPage.js?v=' | asset_url }}" type="module"></script>

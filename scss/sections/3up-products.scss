@@ -1,0 +1,53 @@
+@import '../common.scss';
+
+.three-up-products {
+
+  &__container {
+    display: grid;
+    padding: 20px 10px;
+    
+    @include mq($from: tablet) {
+      padding: 20px;
+    }
+
+    @include mq($from: laptop) {
+      padding: 20px 20px 40px;      
+    }
+
+    @include mq($from: HD) {
+      padding: 20px 140px 40px;
+    }
+  }
+
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-body;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    padding: 20px 0 10px;
+  }
+
+  &__price {
+    display: flex;
+    font-weight: bold;
+  }
+
+  &__compare-price {
+    color: $color-secondary;
+    text-decoration: line-through;
+    font-weight: 400;
+  }
+
+  &__blocks {
+    @include mq($from: tablet) {
+      display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+    }
+}
