@@ -7,7 +7,7 @@
 
   <div class="three-up-products__blocks" id="VQuickAdd">
     {% for product in section.blocks %}
-      {% render 'product-tile' with product: product.settings.product %}
+      {% render 'product-tile' with product, product: product.settings.product %}
     {% endfor %}
   </div>
 
@@ -33,4 +33,13 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-tile' with product: product.settings.product %}"
+  to: "{% render 'product-tile' with product, product: product.settings.product %}"
+  position: 311..386
+{%- endcomment -%}

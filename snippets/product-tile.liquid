@@ -7,7 +7,7 @@
     {{ product.featured_image | image_url: width: '600px', height: '600px', crop: 'center' | image_tag: class: 'product-tile__product-image' }}
     </a>
 
-      {% render 'product-form' with product: product, hidden: true %}
+      {% render 'product-form' with product, product: product, hidden: true %}
   </div>
 
   <div class="product-tile__product-info">
@@ -18,4 +18,13 @@
       </div>
   </div>
 </div>
-{% endif %}
+{% endif %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-form' with product: product, hidden: true %}"
+  to: "{% render 'product-form' with product, product: product, hidden: true %}"
+  position: 396..468
+{%- endcomment -%}

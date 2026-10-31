@@ -20,17 +20,29 @@
     {% else %}  
 
         {% for product in search.results %}      
-          {% render 'product-tile' with product: product %}
+          {% render 'product-tile' with product, product: product %}
         {% endfor %}
 
       {% endif %}
 
     </div>
     
-    {% render 'pagination' with paginate: paginate %}
+    {% render 'pagination' with paginate, paginate: paginate %}
     
     {% endpaginate %}    
     
   {% endif %}
 
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-tile' with product: product %}"
+  to: "{% render 'product-tile' with product, product: product %}"
+  position: 661..719
+- from: "{% render 'pagination' with paginate: paginate %}"
+  to: "{% render 'pagination' with paginate, paginate: paginate %}"
+  position: 781..840
+{%- endcomment -%}

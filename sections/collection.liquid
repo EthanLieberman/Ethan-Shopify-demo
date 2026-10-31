@@ -66,14 +66,14 @@
 </div>
 
 
-{% paginate collection.products by 6, window_size: '1' %}
+{% paginate collection.products by 6, window_size: 0 %}
   <div class="collection__product-container" id="VQuickAdd">
     {% for product in collection.products %}
-      {% render 'product-tile' with product: product %}
+      {% render 'product-tile' with product, product: product %}
     {% endfor %}
   </div>
   
-  {% render 'pagination' with paginate: paginate %}
+  {% render 'pagination' with paginate, paginate: paginate %}
   
 {% endpaginate %}
 
@@ -83,4 +83,19 @@
 {
   "name": "collection"
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% paginate collection.products by 6, window_size: '1' %}"
+  to: "{% paginate collection.products by 6, window_size: 0 %}"
+  position: 1712..1767
+- from: "{% render 'product-tile' with product: product %}"
+  to: "{% render 'product-tile' with product, product: product %}"
+  position: 1880..1938
+- from: "{% render 'pagination' with paginate: paginate %}"
+  to: "{% render 'pagination' with paginate, paginate: paginate %}"
+  position: 1970..2029
+{%- endcomment -%}
